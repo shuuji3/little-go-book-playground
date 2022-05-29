@@ -8,16 +8,16 @@ type Mochi struct {
 }
 
 func main() {
-	emptyMochi := Mochi{}
-	mochi := Mochi{
-		Name:  "Normal Mochi",
+	emptyMochi := &Mochi{}
+	normalMochi := &Mochi{
+		Name:  "Normal",
 		Power: 255,
 	}
-	drMochi := Mochi{"Professor", 65536}
-	fmt.Println(emptyMochi, mochi, drMochi)
+	drMochi := &Mochi{"Professor", 65536}
+	fmt.Println(emptyMochi, normalMochi, drMochi)
 
-	Super(&mochi)
-	fmt.Println(mochi)
+	Super(normalMochi)
+	fmt.Println(normalMochi)
 }
 
 func Super(m *Mochi) {
