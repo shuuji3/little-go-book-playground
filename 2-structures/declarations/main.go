@@ -15,4 +15,11 @@ func main() {
 	}
 	drMochi := Mochi{"Professor", 65536}
 	fmt.Println(emptyMochi, mochi, drMochi)
+
+	Super(&mochi)
+	fmt.Println(mochi)
+}
+
+func Super(m *Mochi) {
+	m.Power += 10000
 }
