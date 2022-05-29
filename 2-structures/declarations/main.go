@@ -7,6 +7,10 @@ type Mochi struct {
 	Power int
 }
 
+func (m *Mochi) Super() {
+	m.Power += 10000
+}
+
 func main() {
 	emptyMochi := &Mochi{}
 	normalMochi := &Mochi{
@@ -16,10 +20,6 @@ func main() {
 	drMochi := &Mochi{"Professor", 65536}
 	fmt.Println(emptyMochi, normalMochi, drMochi)
 
-	Super(normalMochi)
+	normalMochi.Super()
 	fmt.Println(normalMochi)
-}
-
-func Super(m *Mochi) {
-	m.Power += 10000
 }
