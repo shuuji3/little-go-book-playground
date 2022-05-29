@@ -19,7 +19,8 @@ func (m *Mochi) Super() {
 }
 
 func main() {
-	emptyMochi := NewMochi("empty", 0)
+	emptyMochi := new(Mochi)
+	emptyMochi.Name = "empty"
 	normalMochi := NewMochi("Normal", 255)
 	drMochi := NewMochi("Professor", 65536)
 	fmt.Println(emptyMochi, normalMochi, drMochi)
