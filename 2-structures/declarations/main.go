@@ -27,6 +27,10 @@ func (p *Person) Introduce() {
 	fmt.Printf("Hi, I'm %s.\n", p.Name)
 }
 
+func (m *Mochi) Introduce() {
+	fmt.Printf("Hi, I'm %s Mochi.\n", m.Name)
+}
+
 func main() {
 	emptyMochi := new(Mochi)
 	emptyMochi.Person = new(Person)
@@ -48,6 +52,7 @@ func main() {
 	fmt.Println(emptyMochi, normalMochi, drMochi)
 	fmt.Printf("drMochi's father is %v\n", grandMochi)
 
-	drMochi.Introduce()    // Hi, I'm Professor.
-	grandMochi.Introduce() // Hi, I'm Grand father.
+	drMochi.Person.Introduce() // Hi, I'm Professor.
+	drMochi.Introduce()        // Hi, I'm Professor Mochi.
+	grandMochi.Introduce()     // Hi, I'm Grand father Mochi.
 }
