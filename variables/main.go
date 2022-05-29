@@ -3,10 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	power := getPower()
-	fmt.Printf("It's over %d!\n", power)
+	name, power := "Mochi", getPower()
+	fmt.Printf("%s's power is over %d!\n", name, power) // Mochi's power is over 65536!
 }
 
 func getPower() int {
-	return 9001
+	return 65536
 }
