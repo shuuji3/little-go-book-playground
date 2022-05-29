@@ -3,8 +3,9 @@ package main
 import "fmt"
 
 type Mochi struct {
-	Name  string
-	Power int
+	Name   string
+	Power  int
+	Father *Mochi
 }
 
 func NewMochi(name string, power int) *Mochi {
@@ -27,4 +28,12 @@ func main() {
 
 	normalMochi.Super()
 	fmt.Println(normalMochi)
+
+	grandMochi := new(Mochi)
+	grandMochi.Name = "Grand father"
+	grandMochi.Power = 10000
+
+	drMochi.Father = grandMochi
+	fmt.Println(emptyMochi, normalMochi, drMochi)
+	fmt.Printf("drMochi's father is %v\n", grandMochi)
 }
